@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:waste_managament/ui/home/home_screen.dart';
 import 'package:waste_managament/ui/login/login.dart';
 import 'package:waste_managament/ui/register/register.dart';
 import 'package:waste_managament/ui/splash/splash_screen.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  RegisterScreen(),
+      home:  HomeScreen(),
     );
   }
 }

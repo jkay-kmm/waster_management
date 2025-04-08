@@ -24,12 +24,21 @@ dependencies:
   #
   go_router: ^14.8.1
   email_validator: ^3.0.0
+  lucide_icons: ^0.257.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/logo_app2.png"
+  adaptive_icon_background: "#4CAF50"
+  adaptive_icon_foreground: "assets/icons/logo_app2.png"
 
   # Add flutter_gen_runner to dev_dependencies
   flutter_gen_runner: ^5.3.0
