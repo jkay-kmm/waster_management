@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:waste_managament/ui/home/home_screen.dart';
-import 'package:waste_managament/ui/login/login.dart';
-import 'package:waste_managament/ui/register/register.dart';
-import 'package:waste_managament/ui/splash/splash_screen.dart';
-import 'package:waste_managament/ui/welcome/welcome_screen.dart';
+
+import 'navigation/app_router.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -22,10 +19,11 @@ class MyApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return MaterialApp(
+
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      home:  HomeScreen(),
+      title: 'Quản lý rác',
     );
   }
 }
-

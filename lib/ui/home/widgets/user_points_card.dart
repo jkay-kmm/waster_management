@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../exchange_points/exchange_points.dart';
 
 class UserPointsCard extends StatelessWidget {
   const UserPointsCard({super.key});
@@ -62,11 +65,11 @@ class UserPointsCard extends StatelessWidget {
               ),
 
               /// BÊN PHẢI - Nút Đổi điểm
-              InkWell(
+              GestureDetector(
                 onTap: () {
-                  print("hihi");
+                  print("Đổi điểm");
+                  context.push('/');
                 },
-                borderRadius: BorderRadius.circular(20),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
@@ -92,7 +95,8 @@ class UserPointsCard extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              )
+
             ],
           ),
           const SizedBox(height: 16),

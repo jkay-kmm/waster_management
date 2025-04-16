@@ -21,31 +21,65 @@ class CategoryHome extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:  [
-            buildFeatureIcon(icon: LucideIcons.list, label: "Danh mục"),
-            buildFeatureIcon(icon: LucideIcons.shoppingBag, label: "Mua sắm"),
-            buildFeatureIcon(icon: LucideIcons.mapPin, label: "Điểm thả"),
-            buildFeatureIcon(icon: LucideIcons.truck, label: "Pick Up"),
+          children: [
+            buildFeatureIcon(
+              icon: LucideIcons.list,
+              label: "Danh mục",
+              onTap: () {
+                Navigator.pushNamed(context, '/category');
+              },
+
+            ),
+            buildFeatureIcon(
+              icon: LucideIcons.shoppingBag,
+              label: "Mua sắm",
+              onTap: () {
+                Navigator.pushNamed(context, '/shop');
+              },
+            ),
+            buildFeatureIcon(
+              icon: LucideIcons.mapPin,
+              label: "Điểm thả",
+              onTap: () {
+                Navigator.pushNamed(context, '/drop_point');
+              },
+            ),
+            buildFeatureIcon(
+              icon: LucideIcons.truck,
+              label: "Pick Up",
+              onTap: () {
+                Navigator.pushNamed(context, '/pickup');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget buildFeatureIcon({
+    required IconData icon,
+    required String label,
+    required VoidCallback onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.green.shade50,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(icon, color: Colors.green),
+          ),
+          const SizedBox(height: 4),
+          Text(label, style: const TextStyle(fontSize: 12)),
         ],
       ),
-      ),
     );
   }
-  Widget buildFeatureIcon({required IconData icon, required String label}) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: Colors.green.shade50,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Icon(icon, color: Colors.green),
-        ),
-        const SizedBox(height: 4),
-        Text(label, style: const TextStyle(fontSize: 12)),
-      ],
-    );
-  }
+
 
 }
